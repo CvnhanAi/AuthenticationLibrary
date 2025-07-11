@@ -13,4 +13,17 @@ extern NSString * const __kBaseURL;
 
 + (void)paid:(void (^)(void))execute;
 
+// Security Enhancement Methods
++ (BOOL)isDeviceCompromised;
++ (BOOL)verifyApplicationIntegrity;
++ (void)enableAntiDebugging;
++ (void)setupSSLPinning:(NSURLSessionConfiguration *)config;
++ (NSString *)createRequestSignature:(NSDictionary *)params;
++ (void)makeSecureRequest:(NSString *)url params:(NSDictionary *)params completion:(void(^)(BOOL success, NSDictionary *response))completion;
++ (UICKeyChainStore *)getSecureKeychain;
++ (void)secureDeleteStoredKey;
++ (BOOL)isRuntimeHooked;
++ (BOOL)isBinaryModified;
++ (void)performIntegrityCheck;
+
 @end
