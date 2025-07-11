@@ -103,3 +103,13 @@ template <uintptr_t... Idx> struct vxCplEncryptedString<vxCplIndexList<Idx...> >
 
 // Compile-time hex string encryption macro, does same as ENCRYPT, but the naming is just more clear.
 #define ENCRYPTHEX(Str) ENCRYPT(Str)
+
+// Anti-Analysis specific macros
+#define HIDE_STRING(Str) ENCRYPT(Str)
+#define OBFUSCATE_CALL(func) func
+#define ANTI_IDA_STRING(Str) NSSENCRYPT(Str)
+
+// Control flow obfuscation helpers
+#define ANTI_ANALYSIS_NOINLINE __attribute__((noinline))
+#define ANTI_ANALYSIS_FLATTEN __attribute__((flatten))
+#define ANTI_ANALYSIS_OPTNONE __attribute__((optnone))

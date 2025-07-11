@@ -26,4 +26,19 @@ extern NSString * const __kBaseURL;
 + (BOOL)isBinaryModified;
 + (void)performIntegrityCheck;
 
+// Anti-IDA Protection Methods
++ (void)enableAntiIDAProtection;
++ (BOOL)detectAnalysisTools;
++ (BOOL)detectVirtualEnvironment;
++ (void)corruptAnalysisData;
++ (void)obfuscateControlFlow;
++ (BOOL)detectIDADebugger;
++ (BOOL)detectDynamicAnalysis;
++ (void)antiMemoryPatching;
++ (void)performRuntimePacking;
++ (BOOL)validateCodeIntegrity;
++ (void)scrambleSymbolTable;
++ (void)performTimingCheck;
++ (void)startMemoryProtection;
+
 @end
