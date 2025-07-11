@@ -8,8 +8,9 @@ include $(THEOS)/makefiles/common.mk
 
 LIBRARY_NAME = xztime
 xztime_LINKAGE_TYPE = static
-xztime_CFLAGS =  -fobjc-arc -Wno-deprecated-declarations -Wno-unused-variable -Wno-unused-value
+xztime_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Wno-unused-variable -Wno-unused-value -fstack-protector-strong -fPIE -D_FORTIFY_SOURCE=2
+xztime_LDFLAGS = -Wl,-pie
 xztime_FILES = xztime.mm UICKeyChainStore/UICKeyChainStore.m FCUUID/FCUUID.m
-xztime_FRAMEWORKS = UIKit Foundation
+xztime_FRAMEWORKS = UIKit Foundation Security
 
 include $(THEOS_MAKE_PATH)/library.mk
